@@ -1,9 +1,25 @@
-export default function List({data}) {
+import './List.css';
+
+export default function List({covidData}) {
     return (  
         <>
-            <ul>
-                {data.map(data => <li>{data.country}</li>)}
+        <div className="listWrapper">
+            <ul className="targetList">
+                {covidData.map(data => <li>{data.label.uk}</li>)}
             </ul>
+            <ul className="targetList">
+                {covidData.map(data => <li>{data.label.uk}</li>)}
+            </ul>
+            <ul className="targetList">
+                {covidData.map(data => <li>{data.label.uk}</li>)}
+            </ul>
+            <ul className="targetList">
+                {covidData.map(data => <li>{data.label.uk}</li>)}
+            </ul>
+            <ul className="targetList">
+                {covidData.map(data => <li>{data.label.uk}</li>)}
+            </ul>
+        </div>
         </>
     );
 }

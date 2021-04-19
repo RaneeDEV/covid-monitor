@@ -1,11 +1,41 @@
-.targetList > :nth-child(n) {
-  margin-bottom: 10px;
+.covidList > :nth-child(n + 1) {
+  padding: 16px 0;
   font-size: 12px;
+}
+
+.listBoxWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+  padding: 0 12px;
+  background: var(--system-color);
+}
+
+.listBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listTitle {
+  font-weight: 700;
+}
+
+.text {
   color: var(--text-color);
 }
 
-.listWrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 500px;
+.confirmed {
+  color: var(--confirmed);
+}
+
+.deaths {
+  color: var(--brithnes);
+}
+
+.recovered {
+  color: var(--recovered);
+}
+
+.existing {
+  color: var(--existing);
 }

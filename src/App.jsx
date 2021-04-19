@@ -22,9 +22,7 @@ function App() {
   return (
 
     <>
-    <div className="container">
       <List covidData={covidData}/>
-    </div>
     </>
   );
 }

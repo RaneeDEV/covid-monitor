@@ -1,31 +1,29 @@
-.covidList > :nth-child(n + 1) {
-  padding: 16px 0;
-  font-size: 13px;
+.sideBar {
+  width: 500px;
+  background-color: var(--system-color);
+  padding: 0 16px;
 }
 
 .listBoxWrapper {
   display: flex;
   justify-content: space-between;
-  width: 500px;
-  padding: 0 12px;
-  background: var(--system-color);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.listBox {
-  display: flex;
-  justify-content: space-between;
+.countryBox {
+  width: 135px;
+  font-size: 13px;
+  color: var(--text-color);
 }
 
-.listTitle {
-  font-weight: 700;
-}
-
-.counters {
+.counter {
   display: flex;
   flex-direction: column;
+  width: 85px;
 }
 
-.counters > :nth-child(n + 2) {
+.counter > :nth-child(n + 2) {
   margin-top: 7px;
   font-size: 12px;
 }

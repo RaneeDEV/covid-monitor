@@ -85,7 +85,8 @@ code {
 .sideBar {
   width: 500px;
   background-color: var(--system-color);
-  padding-right: 5px;
+  padding-right: 10px;
+  min-height: 100vh;
 }
 
 a, span, ::before, ::after{

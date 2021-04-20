@@ -23,7 +23,7 @@ function App() {
 
     <>
     <div className="sideBar">
-      <List covidData={covidData}/>
+      <List covidData={covidData} changeCounts={setData}/>
     </div>
     </>
   );

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 export default function List({ covidData, changeCounts }) {
   const [order, setOrder] = useState(1)
 
-  const numberFormatter = new Intl.NumberFormat();
+  const numberDefaultFormatter = new Intl.NumberFormat();
   
   function sorting() {
     const sortedArray = [...covidData]
@@ -42,41 +42,41 @@ export default function List({ covidData, changeCounts }) {
         <h5 onClick={() => sorting()}>Recovered</h5>
         <h6 onClick={() => sorting()}>Existing</h6>
       </div>
-      {covidData.map((data) => (
-        <a href="#" className="listBoxWrapper" key={data.id}>
+      {covidData.map((dataObj) => (
+        <a href="#" className="listBoxWrapper" key={dataObj.id}>
           <div className="countryBox">
-            <span>{data.label.en}</span>
+            <span>{dataObj.label.en}</span>
           </div>
           <div className="confirmedBox confirmed counter">
-            <span>{numberFormatter.format(data.confirmed)}</span>
+            <span>{numberDefaultFormatter.format(dataObj.confirmed)}</span>
             <span>
-              {numberFormatter.format(data.delta_confirmed) == 0
+              {numberDefaultFormatter.format(dataObj.delta_confirmed) == 0
                 ? "-"
-                : `${numberFormatter.format(data.delta_confirmed)}`}
+                : `${numberDefaultFormatter.format(dataObj.delta_confirmed)}`}
             </span>
           </div>
           <div className="deathsBox deaths counter">
-            <span>{numberFormatter.format(data.deaths)}</span>
+            <span>{numberDefaultFormatter.format(dataObj.deaths)}</span>
             <span>
-              {numberFormatter.format(data.delta_deaths) == 0
+              {numberDefaultFormatter.format(dataObj.delta_deaths) == 0
                 ? "-"
-                : `${numberFormatter.format(data.delta_confirmed)}`}
+                : `${numberDefaultFormatter.format(dataObj.delta_confirmed)}`}
             </span>
           </div>
           <div className="recoveredBox recovered counter">
-            <span>{numberFormatter.format(data.recovered)}</span>
+            <span>{numberDefaultFormatter.format(dataObj.recovered)}</span>
             <span>
-              {numberFormatter.format(data.delta_recovered) == 0
+              {numberDefaultFormatter.format(dataObj.delta_recovered) == 0
                 ? "-"
-                : `${numberFormatter.format(data.delta_confirmed)}`}
+                : `${numberDefaultFormatter.format(dataObj.delta_confirmed)}`}
             </span>
           </div>
           <div className="existingBox existing counter">
-            <span>{numberFormatter.format(data.existing)}</span>
+            <span>{numberDefaultFormatter.format(dataObj.existing)}</span>
             <span>
-              {numberFormatter.format(data.delta_existing) == 0
+              {numberDefaultFormatter.format(dataObj.delta_existing) == 0
                 ? "-"
-                : `${numberFormatter.format(data.delta_confirmed)}`}
+                : `${numberDefaultFormatter.format(dataObj.delta_confirmed)}`}
             </span>
           </div>
         </a>

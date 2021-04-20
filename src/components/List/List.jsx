@@ -28,7 +28,6 @@ export default function List({ covidData, changeCounts }) {
         }
       })
     }
-
     changeCounts(sortedArray)
     setOrder(order * -1)
     console.log(order);

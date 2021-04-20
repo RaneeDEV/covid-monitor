@@ -1,0 +1,19 @@
+.btn {
+  min-width: 250px;
+  padding: 16px 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 16px;
+  color: var(--brithnes);
+  font-weight: 700;
+  background-color: var(--system-color);
+  transition: 0.15s;
+}
+
+.btn:hover {
+  background-color: var(--active-system-color);
+}
+
+.btn.active{
+  background-color: var(--active-system-color);  
+}

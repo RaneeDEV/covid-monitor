@@ -16,24 +16,43 @@
 }
 
 .btn:focus {
-  outline: 1px solid var(--secondary-system-color);
+  outline: 2px solid var(--border);
 }
 
-.btn.active {
+.active {
+  min-width: 250px;
+  padding: 16px 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 16px;
+  color: var(--brithnes);
+  font-weight: 700;
+  outline: none;
+  transition: 0.15s;
   background-color: var(--active-system-color);
+}
+
+.searchBox {
+  margin: 10px;
+  padding: 5px 12px;
+  min-width: 450px;
+  border: 1px solid var(--border);
+  background-color: var(--active-system-color);
+}
+
+.searchBox i {
+  margin-left: 5px;
+  color: var(--secondary-system-color);
 }
 
 .regionSearch {
-  margin: 16px 12px;
-  padding: 8px 16px;
-  min-width: 450px;
-  font-size: 15px;
+  min-width: 410px;
+  padding: 5px 16px;
+  margin-left: 20px;
   border: 1px solid transparent;
-  outline: none;
+  background: transparent;
+  font-size: 15px;
   color: var(--text-color);
-  background-color: var(--active-system-color);
-}
-
-.regionSearch:focus {
-  outline: 1px solid var(--secondary-system-color);
+  border-left: 1px solid currentColor;
+  outline: none;
 }

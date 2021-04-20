@@ -23,6 +23,9 @@
   font-weight: 600;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
+  background-color: var(--system-color);
+  position: sticky;
+  top: 0;
 }
 
 .listTitle>:nth-child(1){

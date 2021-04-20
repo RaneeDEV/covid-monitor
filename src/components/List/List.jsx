@@ -1,35 +1,35 @@
 import "./List.css";
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export default function List({ covidData, changeCounts }) {
-  const [order, setOrder] = useState(1)
+  const [order, setOrder] = useState(1);
 
   const numberDefaultFormatter = new Intl.NumberFormat();
-  
+
   function sorting() {
-    const sortedArray = [...covidData]
+    const sortedArray = [...covidData];
 
-    const [key, type] = covidData
+    const [key, type] = covidData;
 
-    if (type == 'ab') {
+    if (type == "ab") {
       covidData.sort((a, b) => {
-        if (typeof a[key] == 'string'){
-          return a[key].localeCompare(b[key] * order)
-        } else if (a[key] == 'boolean' || 'number'){
-          return a[key] - b[key] * order
+        if (typeof a[key] == "string") {
+          return a[key].localeCompare(b[key] * order);
+        } else if (a[key] == "boolean" || "number") {
+          return a[key] - b[key] * order;
         }
-      })
-    } else if (type == 'ba'){
+      });
+    } else if (type == "ba") {
       covidData.sort((a, b) => {
-        if (typeof b[key] == 'string'){
-          return b[key].localeCompare(a[key] * order)
-        } else if (b[key] == 'boolean' || 'number'){
-          return b[key] - a[key] * order
+        if (typeof b[key] == "string") {
+          return b[key].localeCompare(a[key] * order);
+        } else if (b[key] == "boolean" || "number") {
+          return b[key] - a[key] * order;
         }
-      })
+      });
     }
-    changeCounts(sortedArray)
-    setOrder(order * -1)
+    changeCounts(sortedArray);
+    setOrder(order * -1);
     console.log(order);
   }
 
@@ -60,7 +60,7 @@ export default function List({ covidData, changeCounts }) {
             <span>
               {numberDefaultFormatter.format(dataObj.delta_deaths) == 0
                 ? "-"
-                : `${numberDefaultFormatter.format(dataObj.delta_confirmed)}`}
+                : `${numberDefaultFormatter.format(dataObj.deaths)}`}
             </span>
           </div>
           <div className="recoveredBox recovered counter">

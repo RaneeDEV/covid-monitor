@@ -1,14 +1,36 @@
-.sideBar {
-  width: 500px;
-  background-color: var(--system-color);
-  padding: 0 16px;
-}
-
 .listBoxWrapper {
   display: flex;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 16px;
   border-bottom: 1px solid var(--border);
+}
+
+.listBoxWrapper>:nth-child(n+2){
+  text-align: right;
+}
+
+.listBoxWrapper:hover{
+  background-color: var(--active-system-color);
+}
+
+.listTitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--brithnes);
+  padding: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.listTitle>:nth-child(1){
+  width: 150px;
+}
+
+.listTitle>:nth-child(n+2){
+  width: 100px;
+  text-align: right;
 }
 
 .countryBox {
@@ -19,6 +41,7 @@
 
 .counter {
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
   width: 85px;
 }
@@ -47,3 +70,5 @@
 .recovered {
   color: var(--recovered);
 }
+
+

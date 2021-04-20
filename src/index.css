@@ -81,3 +81,15 @@ code {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+.sideBar {
+  width: 500px;
+  background-color: var(--system-color);
+  padding-right: 5px;
+}
+
+a, span, ::before, ::after{
+  text-decoration: none;
+  display: inline-flex;
+  color: inherit;
+}

@@ -22,7 +22,9 @@ function App() {
   return (
 
     <>
+    <div className="sideBar">
       <List covidData={covidData}/>
+    </div>
     </>
   );
 }

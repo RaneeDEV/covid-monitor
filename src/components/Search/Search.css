@@ -1,0 +1,27 @@
+.search-wrap {
+  display: flex;
+  padding: 10px;
+}
+
+.common-search {
+  padding: 12px 16px;
+  background-color: var(--active-system-color);
+}
+
+.search-location {
+  width: 475px;
+  border: transparent;
+  padding: 8px 0;
+  padding-left: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-location:focus {
+  outline: 1px solid var(--secondary-system-color);
+}
+
+.search-icon {
+  color: var(--secondary-system-color);
+  padding-right: 10px;
+}

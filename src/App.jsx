@@ -1,9 +1,12 @@
 import "./App.css";
-import "./index.css";
-import logo from "./logo.svg";
-import logo2 from "./logo2.svg";
-import List from "./components/List/List";
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header/Header";
+import DataSumm from "./components/DataSumm/DataSumm";
+import LocationBtn from "./components/LocationBtn/LocationBtn";
+import Search from "./components/Search/Search";
+import List from "./components/List/List";
+import { DataProvider } from "./context/dataContext";
+
 
 function App() {
   const [covidData, setData] = useState([]);
@@ -18,53 +21,32 @@ function App() {
     setData(data[dataLocation]);
   }
 
-  const [searchRegion, setSearchRegion] = useState("");
-
-  function changeRegion(e) {
-    setSearchRegion(e.target.value.trim().toLowerCase());
-    covidData.filter((data) => {
-      return data.label.en.toLowerCase().includes();
-    });
-  }
-
   return (
-    <>
-      <header className="header">
-        <div className="brandBox">
-          <img src={logo} className="cotaLogo" alt="Cota Logo" />
-          <p className="textName">
-            <img src={logo2} className="rnboLogo" alt="Cota Logo" />
-            National Security and Defense Council of Ukraine
-          </p>
-        </div>
-        <div className="sloganBox">
-          <p className="textName">Coronavirus epidemic monitoring system</p>
-        </div>
-        <div className="languageBox">
-          <span className="textName">UK</span>
-          <span className="textName">EN</span>
-        </div>
-      </header>
+    <DataProvider>
+      <Header />
       <div className="sideBar">
-        <button className="btn" onClick={() => setDataLocation("ukraine")}>
-          Ukraine
-        </button>
-        <button className="btn" onClick={() => setDataLocation("world")}>
-          World
-        </button>
-        <div className="searchBox">
-          <i class="fas fa-search"></i>
-          <input
-            type="search"
-            className="regionSearch"
-            placeholder="search by region"
-            value={searchRegion}
-            onChange={changeRegion}
+        <div className="btns-wrap common-btn">
+          <LocationBtn
+            text="Ukraine"
+            currentLocation={dataLocation}
+            changeLocation={() => setDataLocation("ukraine")}
+          />
+          <LocationBtn
+            text="World"
+            currentLocation={dataLocation}
+            changeLocation={() => setDataLocation("world")}
           />
         </div>
+        <div className="data-summ-wrap">
+          <DataSumm title="Confirmed:" />
+          <DataSumm title="Deaths:" />
+          <DataSumm title="Recovered:" />
+          <DataSumm title="Existing:" />
+        </div>
+        <Search />
         <List covidData={covidData} changeCounts={setData} />
       </div>
-    </>
+    </DataProvider>
   );
 }
 

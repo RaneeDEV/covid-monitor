@@ -214,7 +214,6 @@ code {
 .sideBar {
   width: 500px;
   background-color: var(--system-color);
-  padding-right: 10px;
   min-height: 100vh;
 }
 

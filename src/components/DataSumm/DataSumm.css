@@ -1,0 +1,25 @@
+.data-summ-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background-color: var(--active-system-color);
+}
+
+.data-summ-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 120px;
+}
+
+.title-box {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brithnes);
+}
+
+.title-summ {
+  font-size: 20px;
+}

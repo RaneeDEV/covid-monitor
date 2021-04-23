@@ -1,0 +1,33 @@
+.btns-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btns-wrap > :nth-child(n + 2) {
+  margin-left: 5px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 16px 0;
+  min-width: 248px;
+  font-size: 14px;
+  color: var(--text-color);
+  outline: none;
+  background-color: var(--system-color);
+  transition: 0.15s;
+}
+
+.btn:focus {
+  outline: 1px solid var(--secondary-system-color);
+}
+
+.active {
+  color: var(--brithnes);
+  background-color: var(--active-system-color);
+}

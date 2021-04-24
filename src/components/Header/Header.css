@@ -1,5 +1,5 @@
 .header,
-.brandBox {
+.brand-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,7 +7,7 @@
 
 .header {
   padding: 12px 24px;
-  background-color: var(--system-color);
+  background-color: var(--darkness-system-color);
   border-bottom: 1px solid var(--border);
 }
 
@@ -15,33 +15,39 @@
   width: 100px;
   height: 32px;
   object-fit: cover;
-  padding-right: 16px;
+  padding-right: 27px;
 }
 
 .rnboLogo{
   width: 32px;
   height: 32px;
   object-fit: cover;
-  padding-right: 16px;
+  padding-right: 12px;
 }
 
-.brandBox>:nth-child(n+2){
+.brand-box>:nth-child(n+2){
   display: flex;
   align-items: center;
   padding-left: 16px;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--lithnes-system-color);
 }
 
-.languageBox>:nth-child(1){
+.language-box>:nth-child(1){
   padding-right: 16px;
 }
 
-.languageBox>:nth-child(n+2){
+.language-box>:nth-child(n+2){
   padding: 0 16px;
-  border-left: 1px solid var(--border); 
+  border-left: 1px solid var(--lithnes-system-color); 
 }
 
-.textName{
-  font-size: 16px;
+.header-text{
+  font-size: 15px;
   color: var(--brithnes);
+}
+
+.header-lang{
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--lithnes-text-color);
 }

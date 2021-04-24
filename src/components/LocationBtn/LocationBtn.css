@@ -3,11 +3,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.btns-wrap > :nth-child(n + 2) {
-  margin-left: 5px;
-}
-
 .btn {
   display: flex;
   align-items: center;
@@ -15,12 +10,12 @@
   cursor: pointer;
   border: 1px solid transparent;
   padding: 16px 0;
-  min-width: 248px;
+  min-width: 250px;
   font-size: 14px;
   color: var(--text-color);
   outline: none;
-  background-color: var(--system-color);
-  transition: 0.15s;
+  background-color: var(--darkness-system-color);
+  transition: 0.25s;
 }
 
 .btn:focus {
@@ -29,5 +24,6 @@
 
 .active {
   color: var(--brithnes);
+  font-size: 16px;
   background-color: var(--active-system-color);
 }

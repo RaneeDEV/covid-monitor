@@ -1,6 +1,6 @@
 .search-wrap {
   display: flex;
-  padding: 10px;
+  padding: 16px 12px;
 }
 
 .common-search {
@@ -11,10 +11,11 @@
 .search-location {
   width: 475px;
   border: transparent;
-  padding: 8px 0;
+  padding: 12px 24px;
   padding-left: 10px;
   font-size: 15px;
   outline: none;
+  color: var(--text-color);
 }
 
 .search-location:focus {

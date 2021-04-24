@@ -1,4 +1,5 @@
 import "./LocationBtn.css";
+
 export default function LocationBtn({ text, currentLocation, changeLocation }) {
   const active = text.toLowerCase() === currentLocation;
   const classList = `btn ${active ? "active" : ""}`;

@@ -21,7 +21,7 @@ export default function List({ covidData }) {
 function ListItems({ dataObj }) {
   return (
     <>
-      <a href="#" className="listBoxWrapper">
+      <a href="javascript:void(0)" className="listBoxWrapper">
         <div className="countryBox">
           <span>{dataObj.label.en}</span>
         </div>

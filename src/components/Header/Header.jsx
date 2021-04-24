@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import logo2 from "./logo2.svg";
+import "./Header.css";
 
-export default function header() {
+export default function header({langEN, langUK}) {
   return (
     <>
       <header className="header">
@@ -16,8 +17,8 @@ export default function header() {
           <p className="textName">Coronavirus epidemic monitoring system</p>
         </div>
         <div className="languageBox">
-          <span className="textName">UK</span>
-          <span className="textName">EN</span>
+          <span className="textName">{langUK}</span>
+          <span className="textName">{langEN}</span>
         </div>
       </header>
     </>

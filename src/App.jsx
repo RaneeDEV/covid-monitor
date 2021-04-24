@@ -5,36 +5,35 @@ import DataSumm from "./components/DataSumm/DataSumm";
 import LocationBtn from "./components/LocationBtn/LocationBtn";
 import Search from "./components/Search/Search";
 import List from "./components/List/List";
-import { DataProvider } from "./context/dataContext";
-
+import { useCovidData } from "./hooks/dataContext";
 
 function App() {
-  const [covidData, setData] = useState([]);
-  const [dataLocation, setDataLocation] = useState("world");
+  const [covidDataLocation, setCovidDataLocation] = useState("world");
   const today = new Date().toJSON().split("T")[0];
   useEffect(() => {
     getCovidData(`https://api-covid19.rnbo.gov.ua/data?to=${today}`);
-  }, [dataLocation]);
-
+  }, [covidDataLocation]);
   async function getCovidData(url) {
     const data = await fetch(url).then((r) => r.json());
-    setData(data[dataLocation]);
+    setCovidData(data[covidDataLocation]);
   }
 
+  const {covidData, setCovidData} = useCovidData()
+
   return (
-    <DataProvider>
-      <Header />
+    <>
+      <Header langUK="UK" langEN="EN" />
       <div className="sideBar">
         <div className="btns-wrap common-btn">
           <LocationBtn
             text="Ukraine"
-            currentLocation={dataLocation}
-            changeLocation={() => setDataLocation("ukraine")}
+            currentLocation={covidData}
+            changeLocation={() => setCovidDataLocation("ukraine")}
           />
           <LocationBtn
             text="World"
-            currentLocation={dataLocation}
-            changeLocation={() => setDataLocation("world")}
+            currentLocation={covidData}
+            changeLocation={() => setCovidDataLocation("world")}
           />
         </div>
         <div className="data-summ-wrap">
@@ -44,9 +43,9 @@ function App() {
           <DataSumm title="Existing:" />
         </div>
         <Search />
-        <List covidData={covidData} changeCounts={setData} />
+        <List covidData={covidData} />
       </div>
-    </DataProvider>
+    </>
   );
 }
 

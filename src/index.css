@@ -166,7 +166,7 @@ table {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif, var(--system-font); 
+  font-family: 'Inter', var(--system-font), sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--active-system-color);
@@ -195,7 +195,7 @@ code {
   --text-color: hsl(calc(var(--hue) - 6), 14%, 65%);
   --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;;
+  sans-serif;
 }
 
 .container {
@@ -204,7 +204,7 @@ code {
   margin: 0 auto;
 }
 
-.sideBar {
+.sidebar {
   width: 500px;
   background-color: var(--system-color);
   min-height: 100vh;

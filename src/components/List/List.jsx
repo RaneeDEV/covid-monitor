@@ -1,4 +1,5 @@
 import { useCovidData } from "../../hooks/dataContext";
+import React, { useState } from "react";
 import "./List.css";
 const numberDefaultFormatter = new Intl.NumberFormat();
 export default function List({}) {
@@ -7,15 +8,41 @@ export default function List({}) {
   return (
     <>
       <div className="list-title">
-        <h2>Country</h2>
-        <h2>Confirmed</h2>
-        <h2>Deaths</h2>
-        <h2>Recovered</h2>
-        <h2>Existing</h2>
+        <ListTitle keyName="Country"/>
+        <ListTitle keyName="Confirmed"/>
+        <ListTitle keyName="Deaths"/>
+        <ListTitle keyName="Recovered"/>
+        <ListTitle keyName="Existing"/>
       </div>
       {data?.[currentLocation]?.map((dataObj) => (
         <ListItems dataObj={dataObj} key={dataObj.id} />
       ))}
+    </>
+  );
+}
+function ListTitle({ keyName }) {
+  const { covidData } = useCovidData();
+  const [order, setOrder] = useState(1)
+  function sorting() {
+    const sortedArray = covidData
+    console.log(covidData);
+    if (typeof covidData[0][keyName] === 'string') {
+      sortedArray.sort((a,b) => {
+        return a[keyName].localeCompare(b[keyName]) * order
+      })    
+    } else {
+      sortedArray.sort((a,b) => {
+        return (a[keyName] - b[keyName]) * order
+      })  
+    }
+
+    setOrder(order * -1)
+  }
+  return (
+    <>
+      <h2 onClick={() => sorting(keyName)}>
+        {keyName.slice(0, 1).toUpperCase() + keyName.slice(1)}
+      </h2>
     </>
   );
 }

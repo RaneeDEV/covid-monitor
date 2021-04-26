@@ -1,5 +1,4 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import LocationBtn from "./components/LocationBtn/LocationBtn";
 import DataSumm from "./components/DataSumm/DataSumm";
